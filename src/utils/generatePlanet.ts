@@ -10,6 +10,18 @@ export function generatePlanet() {
     gravity: (Math.random() * 20).toFixed(2),
     temperature: (Math.random() * 500 - 200).toFixed(1), // °C
     hasLife: Math.random() > 0.5,
-    description: 'Un planeta misterioso con características únicas.'
+    description: generateLore()
   }
 }
+
+function generateLore() {
+    const intros = [
+      'Un planeta olvidado por el tiempo.',
+      'Cuna de una antigua civilización galáctica.',
+      'Habitado por formas de vida extrañas.',
+      'Envuelto en tormentas eléctricas eternas.',
+      'Cubierto por océanos sin fin.',
+      'Su núcleo brilla con energía desconocida.'
+    ]
+    return intros[Math.floor(Math.random() * intros.length)]
+  }
